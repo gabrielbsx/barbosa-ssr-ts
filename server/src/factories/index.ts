@@ -1,2 +1,1 @@
-export * from './render-view.factory';
-
+export * from './render-view.factory'

@@ -4,13 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>My Website</title>
-    <!-- <link rel="stylesheet" href="/css/style.css"> -->
   </head>
   <body>
-    <%- includeFile('../partials/header.html') %>
-    <main>
-      <%- it.body %>
-    </main>
-    <%- includeFile('../partials/footer.html') %>
+    <div id="app">
+      <%~ includeFile('../partials/header.html') %>
+      <main>
+        <%~ it.body %>
+      </main>
+      <%~ includeFile('../partials/footer.html') %>
+    </div>
   </body>
 </html>
