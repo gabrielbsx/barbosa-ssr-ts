@@ -5,7 +5,7 @@ import { type RenderView } from '../contracts'
 const fullRootPath = join(__dirname, '..', '..', '..', 'web', 'src', 'pages')
 
 const replaceFileToEndpoint = (file: string): string => {
-  const endpoint = file.replace('.ejs', '').replace(fullRootPath, '').replace('index', '')
+  const endpoint = file.replace('.html', '').replace(fullRootPath, '').replace('index', '')
   return endpoint
 }
 
@@ -14,7 +14,7 @@ const recursiveDirectoryViewer = (path: string): Array<Omit<RenderView, 'data'>>
   const filesWithFullPath = files.map((file) => join(path, file))
   const filesWithFullPathAndExtension = filesWithFullPath.map((file) => {
     const fileExtension = file.split('.').pop()
-    if (fileExtension === 'ejs') {
+    if (fileExtension === 'html') {
       const endpoint = replaceFileToEndpoint(file)
       const view = file
       return {
