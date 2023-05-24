@@ -5,6 +5,8 @@ export interface Request<BODY = any, PARAMS = any, QUERY = any, HEADERS = any> {
   headers: HEADERS
 }
 
+export type Method = 'all' | 'get' | 'post' | 'put' | 'delete' | 'patch' | 'options' | 'head'
+
 export interface Response<DATA = any> {
   statusCode: number
   data?: DATA
