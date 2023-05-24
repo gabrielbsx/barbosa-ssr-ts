@@ -15,7 +15,7 @@ const recursiveDirectoryViewer = (path: string): Array<Omit<RenderView, 'data'>>
   const filesWithFullPathAndExtension = filesWithFullPath.map((file) => {
     const fileExtension = file.split('.').pop()
     if (fileExtension === 'html') {
-      const endpoint = replaceFileToEndpoint(file)
+      const endpoint = replaceFileToEndpoint(file).replace('\\', '/')
       const view = file
       return {
         endpoint,
