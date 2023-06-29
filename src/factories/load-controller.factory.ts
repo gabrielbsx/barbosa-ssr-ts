@@ -8,6 +8,9 @@ export const loadControllerFactory = (application: Express): void => {
   const modulesPath = join(__dirname, '..', 'modules')
   const modulesFiles = readdirSync(modulesPath)
   modulesFiles.forEach((moduleFile) => {
+    if (!moduleFile.includes('.controller.ts')) {
+      return
+    }
     import(`../modules/${moduleFile}`)
       .then((module: { default: any }) => {
         const Module = module.default

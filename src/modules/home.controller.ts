@@ -4,7 +4,11 @@ import { ok } from '../helpers'
 class HomeController implements Controller {
   static endpoint = '/'
   static method: Method = 'post'
-  async handle (httpRequest: Request): Promise<Response> {
+  constructor () {
+    console.log('HomeController')
+  }
+
+  public async handle (httpRequest: Request): Promise<Response> {
     console.log(httpRequest)
     return ok({})
   }

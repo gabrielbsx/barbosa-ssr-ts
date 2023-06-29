@@ -2,7 +2,7 @@ import { readdirSync } from 'node:fs'
 import { join } from 'node:path'
 import { type RenderView } from '../contracts'
 
-const fullRootPath = join(__dirname, '..', '..', '..', 'web', 'src', 'pages')
+const fullRootPath = join(__dirname, '..', 'ui', 'pages')
 
 const replaceFileToEndpoint = (file: string): string => {
   const endpoint = file.replace('.html', '').replace(fullRootPath, '').replace('index', '')
